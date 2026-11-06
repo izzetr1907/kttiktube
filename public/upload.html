@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Video Yükle — KttıkTube</title>
+<link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+  <header class="yt-header">
+    <a class="logo" href="/"><span class="logo-icon"></span><span>KttıkTube</span></a>
+    <form class="search-form" id="searchForm" action="/" method="get">
+      <input type="search" name="q" id="searchInput" placeholder="Ara" autocomplete="off" />
+      <button type="submit" aria-label="Ara">🔍</button>
+    </form>
+    <div class="header-actions">
+      <a class="btn-primary" href="/upload">＋ Yükle</a>
+      <button class="icon-btn" id="themeToggle" title="Tema" type="button">🌓</button>
+      <div class="avatar" title="İzzet">İ</div>
+    </div>
+  </header>
+<div class="upload-page">
+<div class="upload-card">
+<h1>Video yükle</h1>
+<p class="hint">MP4, WebM veya MOV — en fazla 500 MB. Kanal adı varsayılan: İzzet.</p>
+<form id="uploadForm">
+<div class="dropzone" id="dropzone">
+<div style="font-size:40px;margin-bottom:8px;">⬆</div>
+<div><strong>Dosya seç</strong> veya sürükle-bırak</div>
+<div class="hint" id="fileName" style="margin-top:8px;">Henüz dosya seçilmedi</div>
+<input type="file" id="fileInput" name="video" accept="video/*" hidden/>
+</div>
+<div class="progress" id="progress"><span></span></div>
+<div class="field" style="margin-top:16px;"><label for="title">Başlık</label>
+<input id="title" name="title" required maxlength="200" placeholder="Videonun başlığı"/></div>
+<div class="field"><label for="description">Açıklama</label>
+<textarea id="description" name="description" rows="4" maxlength="5000" placeholder="Videonu anlat…"></textarea></div>
+<div class="field"><label for="channel_name">Kanal adı</label>
+<input id="channel_name" name="channel_name" value="İzzet" maxlength="80"/></div>
+<button class="btn-primary" type="submit" id="submitBtn" style="width:100%;padding:12px;">Yüklemeyi başlat</button>
+<div class="status" id="status"></div>
+</form></div></div>
+<script src="/js/common.js"></script>
+<script src="/js/upload.js"></script>
+</body></html>

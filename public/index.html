@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>KttıkTube — Ana Sayfa</title>
+<link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+  <header class="yt-header">
+    <a class="logo" href="/"><span class="logo-icon"></span><span>KttıkTube</span></a>
+    <form class="search-form" id="searchForm" action="/" method="get">
+      <input type="search" name="q" id="searchInput" placeholder="Ara" autocomplete="off" />
+      <button type="submit" aria-label="Ara">🔍</button>
+    </form>
+    <div class="header-actions">
+      <a class="btn-primary" href="/upload">＋ Yükle</a>
+      <button class="icon-btn" id="themeToggle" title="Tema" type="button">🌓</button>
+      <div class="avatar" title="İzzet">İ</div>
+    </div>
+  </header>
+<div class="layout">
+<aside class="sidebar">
+<a class="nav-item active" href="/">🏠 Ana sayfa</a>
+<a class="nav-item" href="/?q=Blender">🔥 Trend</a>
+<a class="nav-item" href="/upload">⬆ Yükle</a>
+<a class="nav-item" href="/?q=Sintel">🎬 Kısa filmler</a>
+</aside>
+<main class="main">
+<div id="pageTitle" style="margin:0 0 16px;font-size:18px;font-weight:600;"></div>
+<div class="video-grid" id="grid"></div>
+<div class="empty" id="empty" hidden>Video bulunamadı.</div>
+</main>
+</div>
+<script src="/js/common.js"></script>
+<script src="/js/home.js"></script>
+</body></html>

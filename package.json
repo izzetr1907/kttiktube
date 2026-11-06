@@ -1,0 +1,19 @@
+{
+  "name": "youtube-clone",
+  "version": "1.0.0",
+  "description": "YouTube benzeri video sitesi — KttıkTube",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node -e \"require('./seed')\"",
+    "dev": "node server.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
+    "sql.js": "^1.13.0",
+    "uuid": "^11.0.3"
+  }
+}

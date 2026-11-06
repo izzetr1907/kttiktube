@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>İzle — KttıkTube</title>
+<link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+  <header class="yt-header">
+    <a class="logo" href="/"><span class="logo-icon"></span><span>KttıkTube</span></a>
+    <form class="search-form" id="searchForm" action="/" method="get">
+      <input type="search" name="q" id="searchInput" placeholder="Ara" autocomplete="off" />
+      <button type="submit" aria-label="Ara">🔍</button>
+    </form>
+    <div class="header-actions">
+      <a class="btn-primary" href="/upload">＋ Yükle</a>
+      <button class="icon-btn" id="themeToggle" title="Tema" type="button">🌓</button>
+      <div class="avatar" title="İzzet">İ</div>
+    </div>
+  </header>
+<div class="watch-layout" id="watchRoot">
+<div>
+<div class="player-wrap"><video id="player" controls playsinline></video></div>
+<h1 class="watch-title" id="title">Yükleniyor…</h1>
+<div class="watch-actions">
+<div class="channel-row">
+<div class="avatar" id="chAvatar">B</div>
+<div><div class="name" id="channel">—</div><div class="subs" id="views">—</div></div>
+</div>
+<div class="action-pills">
+<button class="pill" id="likeBtn" type="button">👍 <span id="likeCount">0</span></button>
+<button class="pill" id="dislikeBtn" type="button">👎 <span id="dislikeCount">0</span></button>
+<button class="pill" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href)">🔗 Paylaş</button>
+</div>
+</div>
+<div class="desc-box" id="desc"></div>
+<section class="comments">
+<h2 id="commentCount">Yorumlar</h2>
+<form class="comment-form" id="commentForm">
+<div class="avatar">İ</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+<input name="author" placeholder="Adınız (isteğe bağlı)"/>
+<textarea name="text" rows="2" placeholder="Yorum ekle…" required></textarea>
+<div style="display:flex;justify-content:flex-end;gap:8px;">
+<button class="btn-ghost" type="reset">İptal</button>
+<button class="btn-primary" type="submit">Yorum yap</button>
+</div></div></form>
+<div id="comments"></div>
+</section>
+</div>
+<aside class="related"><h2>İlgili videolar</h2><div id="related"></div></aside>
+</div>
+<script src="/js/common.js"></script>
+<script src="/js/watch.js"></script>
+</body></html>
