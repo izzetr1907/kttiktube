@@ -8,10 +8,14 @@ fs.mkdirSync(dataDir, { recursive: true });
 const dbPath = path.join(dataDir, 'youtube.db');
 
 let db = null;
+let inTx = 0;
+let dirty = false;
 
 function persist() {
+  if (inTx > 0) { dirty = true; return; }
   const data = db.export();
   fs.writeFileSync(dbPath, Buffer.from(data));
+  dirty = false;
 }
 
 function wrap() {
@@ -47,14 +51,17 @@ function wrap() {
     },
     transaction(fn) {
       return (...args) => {
+        inTx += 1;
         db.run('BEGIN');
         try {
           const result = fn(...args);
           db.run('COMMIT');
-          persist();
+          inTx -= 1;
+          if (dirty || true) persist();
           return result;
         } catch (e) {
           try { db.run('ROLLBACK'); } catch (_) {}
+          inTx -= 1;
           throw e;
         }
       };
